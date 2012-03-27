@@ -1,0 +1,25 @@
+global:
+ timezone: Asia/Tokyo
+ user_agent:
+   cookies:
+     file: /home/toshi/.w3m/cookie
+     agent: w3m/0.5.2
+ cache:
+   base: /home/toshi/.plagger/tumblrdashboard/tmp
+ log:
+   level: debug 
+plugins:
+#INPUT
+ - module: CustomFeed::Tumblr
+   config:
+     pit_account: 'news.azwad.com'
+     offset: 0
+     type: 'quote'
+     num: 100
+#FILTER
+#OUTPUT
+ - module: Publish::DumpEntry 
+   config:
+    num: 3
+    dumptxt: dump.txt
+
