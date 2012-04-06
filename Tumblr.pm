@@ -70,7 +70,7 @@ sub aggregate {
 				next;
 			}else {
 				my @urls =();
-				for (my ($number, $url) = each %$deduped){
+				while (my ($number, $url) = each %$deduped){
 					push(@urls,$url);
 				}
 
@@ -82,7 +82,8 @@ sub aggregate {
 				my $title = $2;
 				my $link =  $1 || $values->{'photo-link-url'} || $values->{'url'};
 
-				if ( grep{ $_ eq $link } @urls){
+				if (  grep{ my $var = $_;
+							$var =~ /^$link/ || $link =~ /^$var/ } @urls ){
 					next;
 				}else{
 					my $text = $values->{'quote-text'} || $values->{'link-text'}
