@@ -1,5 +1,6 @@
-Plagger Plugin for Custom Feed;
+Plagger Plugin CustomFeed_Tumblr
 
-need Scrape2Feed.pm
+need TumblrDashboard.pm
 
-https://github.com/azwad/Scrape2Feed
+https://github.com/azwad/TumblrDashboard
+
