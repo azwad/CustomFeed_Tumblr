@@ -1,0 +1,20 @@
+global:
+ timezone: Asia/Tokyo
+ user_agent:
+   cookies:
+     file: /home/toshi/.w3m/cookie
+     agent: w3m/0.5.2
+ cache:
+   base: /home/toshi/.plagger/cron/tmp
+ log:
+   level: debug 
+plugins:
+#INPUT
+ - module: CustomFeed::Scraper
+   config:
+     setting: 'gunosy.com'
+     start_page: '1'
+     last_page: '3'
+#OUTPUT
+ - module: Publish::DumpEntry
+
